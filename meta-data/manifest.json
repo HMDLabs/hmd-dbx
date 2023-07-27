@@ -1,0 +1,8 @@
+{
+  "name": "hmd-dbx",
+  "description": "Extracts from a database and does tricks",
+  "build": {},
+  "project_type": {
+    "name": "Mickey Configuration"
+  }
+}

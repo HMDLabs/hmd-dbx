@@ -1,0 +1,12 @@
+{
+  "_org": "hmd",
+  "_repo_type": "",
+  "short_name": "dbx",
+  "project_name": "hmd-dbx",
+  "repo_name": "hmd-dbx",
+  "description": "Extracts from a database and does tricks",
+  "_author": "Brian Greene",
+  "_author_email": "brian.greene@hmdlabs.io",
+  "_template": "/var/folders/n9/hjwtzw_x2cv3wjmhx1m2jn5h0000gn/T/tmpp1q6w60a/hmd_cli_repo",
+  "_output_dir": "/Users/briangreene/HMDLabs"
+}
