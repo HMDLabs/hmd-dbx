@@ -1,8 +1,8 @@
 import json
 
 f = open('../../test/stuff.json')
-
 raw_schema = json.load(f)
+f.close()
 
 tables = dict()
 columns = dict()
@@ -13,12 +13,18 @@ class IDO:
         self.ID = content['@uuid']
         self.content = content
 
+    def graph_id(self):
+        return self.ID.replace('-', '')
+
     def small_print(self, indent=""):
         print(indent + self.ID + ' ' + self.content['name'])
         # print(self.content)
 
     def as_rect(self, indent=""):
-        print('rectangle ' + self.ID.replace('-', '') + ' as "' + self.content['name'] + '"')
+        print('rectangle ' + self.graph_id() + ' as "' + self.content['name'] + '"')
+
+    def as_entity(self, indent=""):
+        print('entity ' + self.graph_id() + ' as "' + self.content['name'] + '"')
 
 class Table(IDO):
     def __init__(self, content):
@@ -66,7 +72,7 @@ for i in raw_schema['catalog']['tables']:
     if isinstance(i, dict):
         parse_base(i)
 
-f.close()
+
 
 def dump_strings():
     #let's dump some values
@@ -79,8 +85,21 @@ def dump_strings():
 
 print("@startuml")
 for i in tables.values():
-    i.as_rect()
+    i.as_entity()
+    print("together {")
     for c_id in i.content['columns']:
         columns[c_id].as_rect("  ")
-        print(c_id.replace('-', '') + " ---> " + i.ID.replace('-', ''))
+        print(c_id.replace('-', '') + " <-- " + i.graph_id())
+    print("}")
+
+# dump the fks
+for i in tables.values():
+    for fk_entry in i.content['foreign-keys']:
+        if isinstance(fk_entry, dict):
+            #print(fk_entry['column-references'][0]['foreign-key-column'].replace('-', ''))
+            print(fk_entry['column-references'][0]['foreign-key-column'].replace('-', '') + ' "*" <... "1" ' + fk_entry['column-references'][0]['primary-key-column'].replace('-', ''))
+        #else:
+            #print(fk_entry)
+
+
 print("@enduml")
