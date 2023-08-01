@@ -1,0 +1,27 @@
+{
+#foreach($schema in $catalog.schemas)
+    "$schema.fullName" : [
+        #foreach($table in $catalog.getTables($schema))
+        #if ($table.tableType == "table")
+        {
+         "name": "$table.name",
+         "slug" : "$table.key().slug()",
+         "columns": [
+          #foreach($column in $table.columns)
+           {
+            "name": "$identifiers.quoteName($column)",
+            "slug": "$column.key().slug()",
+            "column_type" : "$column.columnDataType",
+            "column_java_sql_type": "$column.getColumnDataType().getJavaSqlType().getName()",
+            "column_db_type":    "$column.getColumnDataType().getDatabaseSpecificTypeName()",
+            "ordinal_position": "$column.getOrdinalPosition()",
+            "is_nullable" : "$column.isNullable()"
+           } #if($foreach.count < $table.columns.size()),#end
+          #end
+          ]
+        } #if($foreach.count < $catalog.getTables($schema).size() ),#end
+        #end
+    #end
+]
+#end
+}
