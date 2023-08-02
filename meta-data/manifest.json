@@ -1,7 +1,25 @@
 {
   "name": "hmd-dbx",
   "description": "Extracts from a database and does tricks",
-  "build": {},
+  "build": {
+    "commands": [
+      [
+        "mickey"
+      ],
+      [
+        "python"
+      ]
+    ]
+  },
+  "generate": {
+    "base_vocabgen": {
+      "config": "gh:NeuronSphere/hmd-tmpl-vocabgen:src/mickey/templates/base_config.json"
+    }
+  },
+  "global_variables": {
+    "base_package": "lang_northwind",
+    "package_name": "lang_northwind"
+  },
   "project_type": {
     "name": "Mickey Configuration"
   }

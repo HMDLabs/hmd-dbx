@@ -5,8 +5,9 @@
         #if ($table.tableType == "table")
         {
          "name": "$identifiers.quoteName($table)",
+         "remarks": "$table.getRemarks()",
          "slug" : "$table.key().slug()",
-         "columns": [
+         "columns" : [
           #foreach($column in $table.columns)
            {
             "name": "$identifiers.quoteName($column)",
@@ -17,10 +18,44 @@
             "column_java_sql_type": "$column.getColumnDataType().getJavaSqlType().getName()",
             "column_db_type":    "$column.getColumnDataType().getDatabaseSpecificTypeName()",
             "ordinal_position": "$column.getOrdinalPosition()",
-
+            "remarks" : "$column.getRemarks()",
             "is_nullable" : "$column.isNullable()"
            } #if($foreach.count < $table.columns.size()),#end
           #end
+          ],
+          "outbound_foreign_keys" : [
+            #foreach($fk in $table.getExportedForeignKeys())
+                {
+                  "fk_slug" : "$fk.key().slug()",
+                  "pk_table" : "$fk.getPrimaryKeyTable().key().slug()",
+                  "fk_table" : "$fk.getForeignKeyTable().key().slug()",
+                  "column_refs" : [
+                  #foreach($colref in $fk.getColumnReferences())
+                    {
+                        "primary_key_column" : "$colref.getPrimaryKeyColumn().key().slug()",
+                        "foreign_key_column" : "$colref.getForeignKeyColumn().key().slug()"
+                    }#if($foreach.count < $fk.getColumnReferences().size()),#end
+                  #end
+                  ]
+                }#if($foreach.count < $table.getExportedForeignKeys().size()),#end
+            #end
+          ],
+          "imported_foreign_keys" : [
+            #foreach($fk in $table.getImportedForeignKeys())
+                {
+                  "fk_slug" : "$fk.key().slug()",
+                  "pk_table" : "$fk.getPrimaryKeyTable().key().slug()",
+                  "fk_table" : "$fk.getForeignKeyTable().key().slug()",
+                  "column_refs" : [
+                  #foreach($colref in $fk.getColumnReferences())
+                    {
+                        "primary_key_column" : "$colref.getPrimaryKeyColumn().key().slug()",
+                        "foreign_key_column" : "$colref.getForeignKeyColumn().key().slug()"
+                    }#if($foreach.count < $fk.getColumnReferences().size()),#end
+                  #end
+                  ]
+                }#if($foreach.count < $table.getImportedForeignKeys().size()),#end
+            #end
           ]
         } #if($foreach.count < $catalog.getTables($schema).size() ),#end
         #end
