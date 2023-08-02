@@ -4,17 +4,20 @@
         #foreach($table in $catalog.getTables($schema))
         #if ($table.tableType == "table")
         {
-         "name": "$table.name",
+         "name": "$identifiers.quoteName($table)",
          "slug" : "$table.key().slug()",
          "columns": [
           #foreach($column in $table.columns)
            {
             "name": "$identifiers.quoteName($column)",
             "slug": "$column.key().slug()",
+            "part_of_pk": "$column.isPartOfPrimaryKey()",
+            "part_of_fk": "$column.isPartOfForeignKey()",
             "column_type" : "$column.columnDataType",
             "column_java_sql_type": "$column.getColumnDataType().getJavaSqlType().getName()",
             "column_db_type":    "$column.getColumnDataType().getDatabaseSpecificTypeName()",
             "ordinal_position": "$column.getOrdinalPosition()",
+
             "is_nullable" : "$column.isNullable()"
            } #if($foreach.count < $table.columns.size()),#end
           #end
