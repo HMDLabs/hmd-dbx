@@ -1,0 +1,1548 @@
+{
+    "public" : [
+        {
+         "name": "categories",
+         "remarks": "",
+         "slug" : "categories_3f405532",
+         "columns" : [
+           {
+            "name": "category_id",
+            "slug": "category_id_472fd0a",
+            "part_of_pk": "true",
+            "part_of_fk": "false",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "1",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "category_name",
+            "slug": "category_name_bcfa363a",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "2",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "description",
+            "slug": "description_41ffd50a",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "text",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "text",
+            "ordinal_position": "3",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "picture",
+            "slug": "picture_865aae0c",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "bytea",
+            "column_java_sql_type": "BINARY",
+            "column_db_type":    "bytea",
+            "ordinal_position": "4",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } 
+          ],
+          "outbound_foreign_keys" : [
+                {
+                  "fk_slug" : "fk_products_categories_fb3e7823",
+                  "pk_table" : "categories_3f405532",
+                  "fk_table" : "products_b624e07a",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "category_id_472fd0a",
+                        "foreign_key_column" : "category_id_6a1fdac2"
+                    }
+                  ]
+                }
+          ],
+          "imported_foreign_keys" : [
+          ]
+        } ,
+        {
+         "name": "customer_demographics",
+         "remarks": "",
+         "slug" : "customer_demographics_c6034745",
+         "columns" : [
+           {
+            "name": "customer_type_id",
+            "slug": "customer_type_id_4da6ea3a",
+            "part_of_pk": "true",
+            "part_of_fk": "false",
+            "column_type" : "bpchar",
+            "column_java_sql_type": "CHAR",
+            "column_db_type":    "bpchar",
+            "ordinal_position": "1",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "customer_desc",
+            "slug": "customer_desc_7a9913ad",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "text",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "text",
+            "ordinal_position": "2",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } 
+          ],
+          "outbound_foreign_keys" : [
+                {
+                  "fk_slug" : "fk_customer_customer_demo_customer_demographics_dd015634",
+                  "pk_table" : "customer_demographics_c6034745",
+                  "fk_table" : "customer_customer_demo_dfd7b619",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "customer_type_id_4da6ea3a",
+                        "foreign_key_column" : "customer_type_id_6e6055e6"
+                    }
+                  ]
+                }
+          ],
+          "imported_foreign_keys" : [
+          ]
+        } ,
+        {
+         "name": "customers",
+         "remarks": "",
+         "slug" : "customers_52078b6b",
+         "columns" : [
+           {
+            "name": "customer_id",
+            "slug": "customer_id_854a5f11",
+            "part_of_pk": "true",
+            "part_of_fk": "false",
+            "column_type" : "bpchar",
+            "column_java_sql_type": "CHAR",
+            "column_db_type":    "bpchar",
+            "ordinal_position": "1",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "company_name",
+            "slug": "company_name_44241f02",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "2",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "contact_name",
+            "slug": "contact_name_3b12853f",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "3",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "contact_title",
+            "slug": "contact_title_282df36e",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "4",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "address",
+            "slug": "address_aa817de9",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "5",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "city",
+            "slug": "city_ef187b60",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "6",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "region",
+            "slug": "region_b73208e9",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "7",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "postal_code",
+            "slug": "postal_code_748792d6",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "8",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "country",
+            "slug": "country_2801398b",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "9",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "phone",
+            "slug": "phone_f5451f63",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "10",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "fax",
+            "slug": "fax_eeeb6d12",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "11",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } 
+          ],
+          "outbound_foreign_keys" : [
+                {
+                  "fk_slug" : "fk_customer_customer_demo_customers_fbc8a75a",
+                  "pk_table" : "customers_52078b6b",
+                  "fk_table" : "customer_customer_demo_dfd7b619",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "customer_id_854a5f11",
+                        "foreign_key_column" : "customer_id_b17f8a23"
+                    }
+                  ]
+                },
+                {
+                  "fk_slug" : "fk_orders_customers_8c8be51a",
+                  "pk_table" : "customers_52078b6b",
+                  "fk_table" : "orders_b5d871fb",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "customer_id_854a5f11",
+                        "foreign_key_column" : "customer_id_9b964a81"
+                    }
+                  ]
+                }
+          ],
+          "imported_foreign_keys" : [
+          ]
+        } ,
+        {
+         "name": "employees",
+         "remarks": "",
+         "slug" : "employees_8f32fe9b",
+         "columns" : [
+           {
+            "name": "employee_id",
+            "slug": "employee_id_8da8b911",
+            "part_of_pk": "true",
+            "part_of_fk": "false",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "1",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "last_name",
+            "slug": "last_name_cf2aa359",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "2",
+            "remarks" : "",
+            "is_nullable" : "False"
+           } ,
+           {
+            "name": "first_name",
+            "slug": "first_name_4d94637f",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "3",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "title",
+            "slug": "title_5dc0f71d",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "4",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "title_of_courtesy",
+            "slug": "title_of_courtesy_32721ee6",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "5",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "birth_date",
+            "slug": "birth_date_9cd627f3",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "date",
+            "column_java_sql_type": "DATE",
+            "column_db_type":    "date",
+            "ordinal_position": "6",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "hire_date",
+            "slug": "hire_date_6e9ed6de",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "date",
+            "column_java_sql_type": "DATE",
+            "column_db_type":    "date",
+            "ordinal_position": "7",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "address",
+            "slug": "address_12c470b9",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "8",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "city",
+            "slug": "city_575b6e30",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "9",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "region",
+            "slug": "region_1f74fbb9",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "10",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "postal_code",
+            "slug": "postal_code_dcca85a6",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "11",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "country",
+            "slug": "country_90442c5b",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "12",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "home_phone",
+            "slug": "home_phone_a0dc06d3",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "13",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "extension",
+            "slug": "extension_32a9f104",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "14",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "photo",
+            "slug": "photo_5d8812f7",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "bytea",
+            "column_java_sql_type": "BINARY",
+            "column_db_type":    "bytea",
+            "ordinal_position": "15",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "notes",
+            "slug": "notes_5d6f2386",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "text",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "text",
+            "ordinal_position": "16",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "reports_to",
+            "slug": "reports_to_ca5929c0",
+            "part_of_pk": "false",
+            "part_of_fk": "true",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "17",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "photo_path",
+            "slug": "photo_path_38e9c2d7",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "18",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } 
+          ],
+          "outbound_foreign_keys" : [
+                {
+                  "fk_slug" : "fk_employees_employees_75995196",
+                  "pk_table" : "employees_8f32fe9b",
+                  "fk_table" : "employees_8f32fe9b",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "employee_id_8da8b911",
+                        "foreign_key_column" : "reports_to_ca5929c0"
+                    }
+                  ]
+                },
+                {
+                  "fk_slug" : "fk_employee_territories_employees_821a88a",
+                  "pk_table" : "employees_8f32fe9b",
+                  "fk_table" : "employee_territories_e5f9d93d",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "employee_id_8da8b911",
+                        "foreign_key_column" : "employee_id_fbd32af"
+                    }
+                  ]
+                },
+                {
+                  "fk_slug" : "fk_orders_employees_c9b7584a",
+                  "pk_table" : "employees_8f32fe9b",
+                  "fk_table" : "orders_b5d871fb",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "employee_id_8da8b911",
+                        "foreign_key_column" : "employee_id_3bb1b1b1"
+                    }
+                  ]
+                }
+          ],
+          "imported_foreign_keys" : [
+                {
+                  "fk_slug" : "fk_employees_employees_75995196",
+                  "pk_table" : "employees_8f32fe9b",
+                  "fk_table" : "employees_8f32fe9b",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "employee_id_8da8b911",
+                        "foreign_key_column" : "reports_to_ca5929c0"
+                    }
+                  ]
+                }
+          ]
+        } ,
+        {
+         "name": "region",
+         "remarks": "",
+         "slug" : "region_ba41360a",
+         "columns" : [
+           {
+            "name": "region_id",
+            "slug": "region_id_9254017c",
+            "part_of_pk": "true",
+            "part_of_fk": "false",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "1",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "region_description",
+            "slug": "region_description_6628c667",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "bpchar",
+            "column_java_sql_type": "CHAR",
+            "column_db_type":    "bpchar",
+            "ordinal_position": "2",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } 
+          ],
+          "outbound_foreign_keys" : [
+                {
+                  "fk_slug" : "fk_territories_region_526d4d07",
+                  "pk_table" : "region_ba41360a",
+                  "fk_table" : "territories_9205294e",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "region_id_9254017c",
+                        "foreign_key_column" : "region_id_b30e76b8"
+                    }
+                  ]
+                }
+          ],
+          "imported_foreign_keys" : [
+          ]
+        } ,
+        {
+         "name": "shippers",
+         "remarks": "",
+         "slug" : "shippers_d333de48",
+         "columns" : [
+           {
+            "name": "shipper_id",
+            "slug": "shipper_id_110b7771",
+            "part_of_pk": "true",
+            "part_of_fk": "false",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "1",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "company_name",
+            "slug": "company_name_e88227c5",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "2",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "phone",
+            "slug": "phone_99a32826",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "3",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } 
+          ],
+          "outbound_foreign_keys" : [
+                {
+                  "fk_slug" : "fk_orders_shippers_74181537",
+                  "pk_table" : "shippers_d333de48",
+                  "fk_table" : "orders_b5d871fb",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "shipper_id_110b7771",
+                        "foreign_key_column" : "ship_via_e66920f0"
+                    }
+                  ]
+                }
+          ],
+          "imported_foreign_keys" : [
+          ]
+        } ,
+        {
+         "name": "suppliers",
+         "remarks": "",
+         "slug" : "suppliers_f09c4f3d",
+         "columns" : [
+           {
+            "name": "supplier_id",
+            "slug": "supplier_id_5c12cd1",
+            "part_of_pk": "true",
+            "part_of_fk": "false",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "1",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "company_name",
+            "slug": "company_name_7827d570",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "2",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "contact_name",
+            "slug": "contact_name_6f163bad",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "3",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "contact_title",
+            "slug": "contact_title_5c31a9dc",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "4",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "address",
+            "slug": "address_de853457",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "5",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "city",
+            "slug": "city_231c31ce",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "6",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "region",
+            "slug": "region_eb35bf57",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "7",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "postal_code",
+            "slug": "postal_code_a88b4944",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "8",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "country",
+            "slug": "country_5c04eff9",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "9",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "phone",
+            "slug": "phone_2948d5d1",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "10",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "fax",
+            "slug": "fax_22ef2380",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "11",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "homepage",
+            "slug": "homepage_5ff6851",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "text",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "text",
+            "ordinal_position": "12",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } 
+          ],
+          "outbound_foreign_keys" : [
+                {
+                  "fk_slug" : "fk_products_suppliers_85dc7f8c",
+                  "pk_table" : "suppliers_f09c4f3d",
+                  "fk_table" : "products_b624e07a",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "supplier_id_5c12cd1",
+                        "foreign_key_column" : "supplier_id_f14ac334"
+                    }
+                  ]
+                }
+          ],
+          "imported_foreign_keys" : [
+          ]
+        } ,
+        {
+         "name": "us_states",
+         "remarks": "",
+         "slug" : "us_states_cba4bdd9",
+         "columns" : [
+           {
+            "name": "state_id",
+            "slug": "state_id_f78514d0",
+            "part_of_pk": "true",
+            "part_of_fk": "false",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "1",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "state_name",
+            "slug": "state_name_9b5f9ec0",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "2",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "state_abbr",
+            "slug": "state_abbr_9b59b866",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "3",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "state_region",
+            "slug": "state_region_b9c647a9",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "4",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } 
+          ],
+          "outbound_foreign_keys" : [
+          ],
+          "imported_foreign_keys" : [
+          ]
+        } ,
+        {
+         "name": "customer_customer_demo",
+         "remarks": "",
+         "slug" : "customer_customer_demo_dfd7b619",
+         "columns" : [
+           {
+            "name": "customer_id",
+            "slug": "customer_id_b17f8a23",
+            "part_of_pk": "true",
+            "part_of_fk": "true",
+            "column_type" : "bpchar",
+            "column_java_sql_type": "CHAR",
+            "column_db_type":    "bpchar",
+            "ordinal_position": "1",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "customer_type_id",
+            "slug": "customer_type_id_6e6055e6",
+            "part_of_pk": "true",
+            "part_of_fk": "true",
+            "column_type" : "bpchar",
+            "column_java_sql_type": "CHAR",
+            "column_db_type":    "bpchar",
+            "ordinal_position": "2",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } 
+          ],
+          "outbound_foreign_keys" : [
+          ],
+          "imported_foreign_keys" : [
+                {
+                  "fk_slug" : "fk_customer_customer_demo_customers_fbc8a75a",
+                  "pk_table" : "customers_52078b6b",
+                  "fk_table" : "customer_customer_demo_dfd7b619",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "customer_id_854a5f11",
+                        "foreign_key_column" : "customer_id_b17f8a23"
+                    }
+                  ]
+                },
+                {
+                  "fk_slug" : "fk_customer_customer_demo_customer_demographics_dd015634",
+                  "pk_table" : "customer_demographics_c6034745",
+                  "fk_table" : "customer_customer_demo_dfd7b619",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "customer_type_id_4da6ea3a",
+                        "foreign_key_column" : "customer_type_id_6e6055e6"
+                    }
+                  ]
+                }
+          ]
+        } ,
+        {
+         "name": "orders",
+         "remarks": "",
+         "slug" : "orders_b5d871fb",
+         "columns" : [
+           {
+            "name": "order_id",
+            "slug": "order_id_4ec7cd11",
+            "part_of_pk": "true",
+            "part_of_fk": "false",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "1",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "customer_id",
+            "slug": "customer_id_9b964a81",
+            "part_of_pk": "false",
+            "part_of_fk": "true",
+            "column_type" : "bpchar",
+            "column_java_sql_type": "CHAR",
+            "column_db_type":    "bpchar",
+            "ordinal_position": "2",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "employee_id",
+            "slug": "employee_id_3bb1b1b1",
+            "part_of_pk": "false",
+            "part_of_fk": "true",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "3",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "order_date",
+            "slug": "order_date_32444f64",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "date",
+            "column_java_sql_type": "DATE",
+            "column_db_type":    "date",
+            "ordinal_position": "4",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "required_date",
+            "slug": "required_date_4463b5b3",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "date",
+            "column_java_sql_type": "DATE",
+            "column_db_type":    "date",
+            "ordinal_position": "5",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "shipped_date",
+            "slug": "shipped_date_862f47f",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "date",
+            "column_java_sql_type": "DATE",
+            "column_db_type":    "date",
+            "ordinal_position": "6",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "ship_via",
+            "slug": "ship_via_e66920f0",
+            "part_of_pk": "false",
+            "part_of_fk": "true",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "7",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "freight",
+            "slug": "freight_e13a70a8",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "float4",
+            "column_java_sql_type": "REAL",
+            "column_db_type":    "float4",
+            "ordinal_position": "8",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "ship_name",
+            "slug": "ship_name_4a692c13",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "9",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "ship_address",
+            "slug": "ship_address_4f22ee56",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "10",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "ship_city",
+            "slug": "ship_city_4a644af3",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "11",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "ship_region",
+            "slug": "ship_region_d2155bbc",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "12",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "ship_postal_code",
+            "slug": "ship_postal_code_38b43cc3",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "13",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "ship_country",
+            "slug": "ship_country_cca2a9f8",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "14",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } 
+          ],
+          "outbound_foreign_keys" : [
+                {
+                  "fk_slug" : "fk_order_details_orders_2b72b746",
+                  "pk_table" : "orders_b5d871fb",
+                  "fk_table" : "order_details_44160167",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "order_id_4ec7cd11",
+                        "foreign_key_column" : "order_id_883c2b25"
+                    }
+                  ]
+                }
+          ],
+          "imported_foreign_keys" : [
+                {
+                  "fk_slug" : "fk_orders_customers_8c8be51a",
+                  "pk_table" : "customers_52078b6b",
+                  "fk_table" : "orders_b5d871fb",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "customer_id_854a5f11",
+                        "foreign_key_column" : "customer_id_9b964a81"
+                    }
+                  ]
+                },
+                {
+                  "fk_slug" : "fk_orders_employees_c9b7584a",
+                  "pk_table" : "employees_8f32fe9b",
+                  "fk_table" : "orders_b5d871fb",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "employee_id_8da8b911",
+                        "foreign_key_column" : "employee_id_3bb1b1b1"
+                    }
+                  ]
+                },
+                {
+                  "fk_slug" : "fk_orders_shippers_74181537",
+                  "pk_table" : "shippers_d333de48",
+                  "fk_table" : "orders_b5d871fb",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "shipper_id_110b7771",
+                        "foreign_key_column" : "ship_via_e66920f0"
+                    }
+                  ]
+                }
+          ]
+        } ,
+        {
+         "name": "products",
+         "remarks": "",
+         "slug" : "products_b624e07a",
+         "columns" : [
+           {
+            "name": "product_id",
+            "slug": "product_id_76f3f931",
+            "part_of_pk": "true",
+            "part_of_fk": "false",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "1",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "product_name",
+            "slug": "product_name_4aed52a1",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "2",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "supplier_id",
+            "slug": "supplier_id_f14ac334",
+            "part_of_pk": "false",
+            "part_of_fk": "true",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "3",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "category_id",
+            "slug": "category_id_6a1fdac2",
+            "part_of_pk": "false",
+            "part_of_fk": "true",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "4",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "quantity_per_unit",
+            "slug": "quantity_per_unit_22d7f360",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "5",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "unit_price",
+            "slug": "unit_price_a599e994",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "float4",
+            "column_java_sql_type": "REAL",
+            "column_db_type":    "float4",
+            "ordinal_position": "6",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "units_in_stock",
+            "slug": "units_in_stock_25f22d12",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "7",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "units_on_order",
+            "slug": "units_on_order_94ffca84",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "8",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "reorder_level",
+            "slug": "reorder_level_c31aa606",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "9",
+            "remarks" : "",
+            "is_nullable" : "true"
+           } ,
+           {
+            "name": "discontinued",
+            "slug": "discontinued_c69b5295",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "int4",
+            "column_java_sql_type": "INTEGER",
+            "column_db_type":    "int4",
+            "ordinal_position": "10",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } 
+          ],
+          "outbound_foreign_keys" : [
+                {
+                  "fk_slug" : "fk_order_details_products_96188bc5",
+                  "pk_table" : "products_b624e07a",
+                  "fk_table" : "order_details_44160167",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "product_id_76f3f931",
+                        "foreign_key_column" : "product_id_a726f5e4"
+                    }
+                  ]
+                }
+          ],
+          "imported_foreign_keys" : [
+                {
+                  "fk_slug" : "fk_products_categories_fb3e7823",
+                  "pk_table" : "categories_3f405532",
+                  "fk_table" : "products_b624e07a",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "category_id_472fd0a",
+                        "foreign_key_column" : "category_id_6a1fdac2"
+                    }
+                  ]
+                },
+                {
+                  "fk_slug" : "fk_products_suppliers_85dc7f8c",
+                  "pk_table" : "suppliers_f09c4f3d",
+                  "fk_table" : "products_b624e07a",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "supplier_id_5c12cd1",
+                        "foreign_key_column" : "supplier_id_f14ac334"
+                    }
+                  ]
+                }
+          ]
+        } ,
+        {
+         "name": "territories",
+         "remarks": "",
+         "slug" : "territories_9205294e",
+         "columns" : [
+           {
+            "name": "territory_id",
+            "slug": "territory_id_101e5bd2",
+            "part_of_pk": "true",
+            "part_of_fk": "false",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "1",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "territory_description",
+            "slug": "territory_description_ec5a73c9",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "bpchar",
+            "column_java_sql_type": "CHAR",
+            "column_db_type":    "bpchar",
+            "ordinal_position": "2",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "region_id",
+            "slug": "region_id_b30e76b8",
+            "part_of_pk": "false",
+            "part_of_fk": "true",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "3",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } 
+          ],
+          "outbound_foreign_keys" : [
+                {
+                  "fk_slug" : "fk_employee_territories_territories_3b03b2bd",
+                  "pk_table" : "territories_9205294e",
+                  "fk_table" : "employee_territories_e5f9d93d",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "territory_id_101e5bd2",
+                        "foreign_key_column" : "territory_id_3abfa9c3"
+                    }
+                  ]
+                }
+          ],
+          "imported_foreign_keys" : [
+                {
+                  "fk_slug" : "fk_territories_region_526d4d07",
+                  "pk_table" : "region_ba41360a",
+                  "fk_table" : "territories_9205294e",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "region_id_9254017c",
+                        "foreign_key_column" : "region_id_b30e76b8"
+                    }
+                  ]
+                }
+          ]
+        } ,
+        {
+         "name": "employee_territories",
+         "remarks": "",
+         "slug" : "employee_territories_e5f9d93d",
+         "columns" : [
+           {
+            "name": "employee_id",
+            "slug": "employee_id_fbd32af",
+            "part_of_pk": "true",
+            "part_of_fk": "true",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "1",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "territory_id",
+            "slug": "territory_id_3abfa9c3",
+            "part_of_pk": "true",
+            "part_of_fk": "true",
+            "column_type" : "varchar",
+            "column_java_sql_type": "VARCHAR",
+            "column_db_type":    "varchar",
+            "ordinal_position": "2",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } 
+          ],
+          "outbound_foreign_keys" : [
+          ],
+          "imported_foreign_keys" : [
+                {
+                  "fk_slug" : "fk_employee_territories_employees_821a88a",
+                  "pk_table" : "employees_8f32fe9b",
+                  "fk_table" : "employee_territories_e5f9d93d",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "employee_id_8da8b911",
+                        "foreign_key_column" : "employee_id_fbd32af"
+                    }
+                  ]
+                },
+                {
+                  "fk_slug" : "fk_employee_territories_territories_3b03b2bd",
+                  "pk_table" : "territories_9205294e",
+                  "fk_table" : "employee_territories_e5f9d93d",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "territory_id_101e5bd2",
+                        "foreign_key_column" : "territory_id_3abfa9c3"
+                    }
+                  ]
+                }
+          ]
+        } ,
+        {
+         "name": "order_details",
+         "remarks": "",
+         "slug" : "order_details_44160167",
+         "columns" : [
+           {
+            "name": "order_id",
+            "slug": "order_id_883c2b25",
+            "part_of_pk": "true",
+            "part_of_fk": "true",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "1",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "product_id",
+            "slug": "product_id_a726f5e4",
+            "part_of_pk": "true",
+            "part_of_fk": "true",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "2",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "unit_price",
+            "slug": "unit_price_d5cce647",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "float4",
+            "column_java_sql_type": "REAL",
+            "column_db_type":    "float4",
+            "ordinal_position": "3",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "quantity",
+            "slug": "quantity_f2129004",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "int2",
+            "column_java_sql_type": "SMALLINT",
+            "column_db_type":    "int2",
+            "ordinal_position": "4",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } ,
+           {
+            "name": "discount",
+            "slug": "discount_4ef2a0ba",
+            "part_of_pk": "false",
+            "part_of_fk": "false",
+            "column_type" : "float4",
+            "column_java_sql_type": "REAL",
+            "column_db_type":    "float4",
+            "ordinal_position": "5",
+            "remarks" : "",
+            "is_nullable" : "false"
+           } 
+          ],
+          "outbound_foreign_keys" : [
+          ],
+          "imported_foreign_keys" : [
+                {
+                  "fk_slug" : "fk_order_details_orders_2b72b746",
+                  "pk_table" : "orders_b5d871fb",
+                  "fk_table" : "order_details_44160167",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "order_id_4ec7cd11",
+                        "foreign_key_column" : "order_id_883c2b25"
+                    }
+                  ]
+                },
+                {
+                  "fk_slug" : "fk_order_details_products_96188bc5",
+                  "pk_table" : "products_b624e07a",
+                  "fk_table" : "order_details_44160167",
+                  "column_refs" : [
+                    {
+                        "primary_key_column" : "product_id_76f3f931",
+                        "foreign_key_column" : "product_id_a726f5e4"
+                    }
+                  ]
+                }
+          ]
+        } 
+]
+}
