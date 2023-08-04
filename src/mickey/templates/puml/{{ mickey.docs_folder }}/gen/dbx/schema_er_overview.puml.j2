@@ -1,0 +1,13 @@
+@startuml
+{%- for schema in schemas %}
+    database {{ schema.name }} as "<<schema>>" {
+    {%- for table in schema.tables %}
+        entity {{ table.name }} {
+            {% for col in table.columns -%}
+                * {{ col.slug}} {{ ', ' if not loop.last else '' }}
+            {% endfor -%}
+        }
+    {%- endfor %}
+    }
+{%- endfor %}
+@enduml

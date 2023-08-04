@@ -1,7 +1,10 @@
 {
-#foreach($schema in $catalog.schemas)
-    "$schema.fullName" : [
-        #foreach($table in $catalog.getTables($schema))
+  "schemas": [
+  #foreach($schema in $catalog.schemas)
+  {
+    "name": "$schema.fullName",
+    "tables":
+     [ #foreach($table in $catalog.getTables($schema))
         #if ($table.tableType == "table")
         {
          "name": "$identifiers.quoteName($table)",
@@ -60,6 +63,8 @@
         } #if($foreach.count < $catalog.getTables($schema).size() ),#end
         #end
     #end
-]
+    ]
+  } #if($foreach.count < $catalog.schemas.size() ),#end
 #end
+  ]
 }

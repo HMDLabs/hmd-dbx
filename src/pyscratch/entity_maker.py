@@ -1,5 +1,4 @@
 import json
-import json_fix
 
 f = open('../../test/inter.json')
 raw_schema = json.load(f)
@@ -13,10 +12,10 @@ f = open('typemap.json')
 type_map_config = json.load(f)
 f.close()
 
-
 tables = dict()
 columns = dict()
 ns_relationships = dict()
+schemas = dict()
 
 def typemap(java_sql_type):
     return type_map_config[java_sql_type]["ns_type"]
@@ -83,15 +82,19 @@ class Column(NamedObject):
                 "required": self.content["is_nullable"] }
 
 
+schemas_to_namespace = {"public": "northwind"}
+
 # note we're only reading the public schema now - this will need updated with a more robust inter format
-tab_list = raw_schema['public']
-for tt in tab_list:
-    t = Table(tt)
-    tables[t.slug] = t
-    for c in tt['columns']:
-        new_col = Column(c)
-        t.columns.append(new_col)
-        columns[new_col.slug] = new_col
+
+for schema in raw_schema['schemas']:
+    #tab_list = schema[schemas]
+    for tt in schema["tables"]:
+        t = Table(tt)
+        tables[t.slug] = t
+        for c in tt['columns']:
+            new_col = Column(c)
+            t.columns.append(new_col)
+            columns[new_col.slug] = new_col
 
 for k, v in tables.items():
     dict_to_write = dict()

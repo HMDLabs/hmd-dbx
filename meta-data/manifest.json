@@ -14,6 +14,10 @@
   "generate": {
     "base_vocabgen": {
       "config": "gh:NeuronSphere/hmd-tmpl-vocabgen:src/mickey/templates/base_config.json"
+    },
+    "full_db_puml": {
+      "contexts": ["test/inter.json"],
+      "templates": ["hmd-dbx/puml"]
     }
   },
   "global_variables": {

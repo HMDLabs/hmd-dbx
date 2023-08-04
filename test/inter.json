@@ -1,6 +1,9 @@
 {
-    "public" : [
-        {
+  "schemas": [
+  {
+    "name": "public",
+    "tables":
+     [         {
          "name": "categories",
          "remarks": "",
          "slug" : "categories_3f405532",
@@ -308,7 +311,7 @@
             "column_db_type":    "varchar",
             "ordinal_position": "2",
             "remarks" : "",
-            "is_nullable" : "False"
+            "is_nullable" : "false"
            } ,
            {
             "name": "first_name",
@@ -1544,5 +1547,8 @@
                 }
           ]
         } 
-]
+
+    ]
+  } 
+  ]
 }
