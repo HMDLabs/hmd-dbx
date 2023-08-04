@@ -1,0 +1,26 @@
+@startuml
+
+left to right direction
+
+rectangle ns_graph as "NeuronSphere Semantic Model" {
+!include ./classes/puml/lang_northwind_class_diagram.puml
+}
+!include ./gen/dbx/schema_er_detail.puml
+
+note as public_note
+    The 'Standard' Northwinds database 
+    schema in postgres
+end note
+
+note as ns_note 
+    Extracted NeuronSphere
+    Semantic Model
+end note
+
+ns_note ..> ns_graph
+
+public_note ..> public
+
+public -down-> ns_graph : Schema Transform
+
+@enduml

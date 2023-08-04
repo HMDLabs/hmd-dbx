@@ -30,7 +30,17 @@ entity "<b>$name</b>" as $slug << (V, Aquamarine) view >>
 {% for schema in schemas %}
     $schema("{{ schema.slug }}", "{{ schema.name }}") {
     {%- for table in schema.tables %}
-        $table("{{ table.name }}", "{{ table.slug }}")
+        $table("{{ table.name }}", "{{ table.slug }}") {
+            {%- for col in table.columns -%}
+               {%- if col.part_of_pk == "true" %}
+                  $pk("{{ col.name }}")
+               {%- elif col.part_of_fk == "true" %}
+                  $fk("{{ col.name }}")
+               {%- else %}
+                  $column("{{ col.name }}")
+               {%- endif %} : {{ col.column_db_type }}
+            {%- endfor %}
+        }
     {%- endfor %}
     }
 {%- endfor %}
@@ -38,7 +48,9 @@ entity "<b>$name</b>" as $slug << (V, Aquamarine) view >>
 {%- for schema in schemas %}
     {%- for table in schema.tables %}
         {%- for fk_ref in table.outbound_foreign_keys %}
-            {{ fk_ref.pk_table }} ||--o{ {{ fk_ref.fk_table }} : {{ fk_ref.fk_name }}
+            {%- for col_ref in fk_ref.column_refs %}
+    {{ fk_ref.pk_table }}::{{ col_ref.primary_key_column_name }} ||--o{ {{ fk_ref.fk_table }}::{{ col_ref.foreign_key_column_name }} : {{ fk_ref.fk_name }}
+            {%- endfor %}
         {%- endfor %}
     {%- endfor %}
 {%- endfor %}

@@ -82,7 +82,7 @@ class Column(NamedObject):
                 "required": self.content["is_nullable"] }
 
 
-schemas_to_namespace = {"public": "northwind"}
+schemas_to_namespace = {"public": "lang_northwind"}
 
 # note we're only reading the public schema now - this will need updated with a more robust inter format
 
@@ -105,8 +105,8 @@ for k, v in tables.items():
 
         imported_key0 = v.content["imported_foreign_keys"][0]
         imported_key1 = v.content["imported_foreign_keys"][1]
-        v.mark_fk_for_ignore(imported_key0["column_refs"][0]["foreign_key_column"])
-        v.mark_fk_for_ignore(imported_key1["column_refs"][0]["foreign_key_column"])
+        v.mark_fk_for_ignore(imported_key0["column_refs"][0]["foreign_key_column_slug"])
+        v.mark_fk_for_ignore(imported_key1["column_refs"][0]["foreign_key_column_slug"])
         dict_to_write = v.get_ns_dict(ns_type="relationship")
         dict_to_write["ref_from"] = f'lang_northwind.{tables[(imported_key0["pk_table"])].name}'
         dict_to_write["ref_to"] = f'lang_northwind.{tables[(imported_key1["pk_table"])].name}'
@@ -139,7 +139,7 @@ for k, v in tables.items():
 
                 #remove the column refs from the target tables
                 for col_ref in fk["column_refs"]:
-                    fk_col = col_ref["foreign_key_column"]
+                    fk_col = col_ref["foreign_key_column_slug"]
                     #print(f'Removing Column Ref {fk_col} from {fk_table.slug}')
                     tables[fk_table.slug].mark_fk_for_ignore(fk_col)
             else:

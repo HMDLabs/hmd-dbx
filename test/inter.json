@@ -2,6 +2,7 @@
   "schemas": [
   {
     "name": "public",
+    "slug": "public_c5bdb62a",
     "tables":
      [         {
          "name": "categories",
@@ -60,12 +61,15 @@
           "outbound_foreign_keys" : [
                 {
                   "fk_slug" : "fk_products_categories_fb3e7823",
+                  "fk_name" : "fk_products_categories",
                   "pk_table" : "categories_3f405532",
                   "fk_table" : "products_b624e07a",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "category_id_472fd0a",
-                        "foreign_key_column" : "category_id_6a1fdac2"
+                        "primary_key_column_slug" : "category_id_472fd0a",
+                        "foreign_key_column_slug" : "category_id_6a1fdac2",
+                        "primary_key_column_name" : "category_id",
+                        "foreign_key_column_name" : "category_id"
                     }
                   ]
                 }
@@ -106,12 +110,15 @@
           "outbound_foreign_keys" : [
                 {
                   "fk_slug" : "fk_customer_customer_demo_customer_demographics_dd015634",
+                  "fk_name" : "fk_customer_customer_demo_customer_demographics",
                   "pk_table" : "customer_demographics_c6034745",
                   "fk_table" : "customer_customer_demo_dfd7b619",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "customer_type_id_4da6ea3a",
-                        "foreign_key_column" : "customer_type_id_6e6055e6"
+                        "primary_key_column_slug" : "customer_type_id_4da6ea3a",
+                        "foreign_key_column_slug" : "customer_type_id_6e6055e6",
+                        "primary_key_column_name" : "customer_type_id",
+                        "foreign_key_column_name" : "customer_type_id"
                     }
                   ]
                 }
@@ -260,23 +267,29 @@
           "outbound_foreign_keys" : [
                 {
                   "fk_slug" : "fk_customer_customer_demo_customers_fbc8a75a",
+                  "fk_name" : "fk_customer_customer_demo_customers",
                   "pk_table" : "customers_52078b6b",
                   "fk_table" : "customer_customer_demo_dfd7b619",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "customer_id_854a5f11",
-                        "foreign_key_column" : "customer_id_b17f8a23"
+                        "primary_key_column_slug" : "customer_id_854a5f11",
+                        "foreign_key_column_slug" : "customer_id_b17f8a23",
+                        "primary_key_column_name" : "customer_id",
+                        "foreign_key_column_name" : "customer_id"
                     }
                   ]
                 },
                 {
                   "fk_slug" : "fk_orders_customers_8c8be51a",
+                  "fk_name" : "fk_orders_customers",
                   "pk_table" : "customers_52078b6b",
                   "fk_table" : "orders_b5d871fb",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "customer_id_854a5f11",
-                        "foreign_key_column" : "customer_id_9b964a81"
+                        "primary_key_column_slug" : "customer_id_854a5f11",
+                        "foreign_key_column_slug" : "customer_id_9b964a81",
+                        "primary_key_column_name" : "customer_id",
+                        "foreign_key_column_name" : "customer_id"
                     }
                   ]
                 }
@@ -509,34 +522,43 @@
           "outbound_foreign_keys" : [
                 {
                   "fk_slug" : "fk_employees_employees_75995196",
+                  "fk_name" : "fk_employees_employees",
                   "pk_table" : "employees_8f32fe9b",
                   "fk_table" : "employees_8f32fe9b",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "employee_id_8da8b911",
-                        "foreign_key_column" : "reports_to_ca5929c0"
+                        "primary_key_column_slug" : "employee_id_8da8b911",
+                        "foreign_key_column_slug" : "reports_to_ca5929c0",
+                        "primary_key_column_name" : "employee_id",
+                        "foreign_key_column_name" : "reports_to"
                     }
                   ]
                 },
                 {
                   "fk_slug" : "fk_employee_territories_employees_821a88a",
+                  "fk_name" : "fk_employee_territories_employees",
                   "pk_table" : "employees_8f32fe9b",
                   "fk_table" : "employee_territories_e5f9d93d",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "employee_id_8da8b911",
-                        "foreign_key_column" : "employee_id_fbd32af"
+                        "primary_key_column_slug" : "employee_id_8da8b911",
+                        "foreign_key_column_slug" : "employee_id_fbd32af",
+                        "primary_key_column_name" : "employee_id",
+                        "foreign_key_column_name" : "employee_id"
                     }
                   ]
                 },
                 {
                   "fk_slug" : "fk_orders_employees_c9b7584a",
+                  "fk_name" : "fk_orders_employees",
                   "pk_table" : "employees_8f32fe9b",
                   "fk_table" : "orders_b5d871fb",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "employee_id_8da8b911",
-                        "foreign_key_column" : "employee_id_3bb1b1b1"
+                        "primary_key_column_slug" : "employee_id_8da8b911",
+                        "foreign_key_column_slug" : "employee_id_3bb1b1b1",
+                        "primary_key_column_name" : "employee_id",
+                        "foreign_key_column_name" : "employee_id"
                     }
                   ]
                 }
@@ -548,8 +570,10 @@
                   "fk_table" : "employees_8f32fe9b",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "employee_id_8da8b911",
-                        "foreign_key_column" : "reports_to_ca5929c0"
+                        "primary_key_column_slug" : "employee_id_8da8b911",
+                        "foreign_key_column_slug" : "reports_to_ca5929c0",
+                        "primary_key_column_name" : "employee_id",
+                        "foreign_key_column_name" : "reports_to"
                     }
                   ]
                 }
@@ -588,12 +612,15 @@
           "outbound_foreign_keys" : [
                 {
                   "fk_slug" : "fk_territories_region_526d4d07",
+                  "fk_name" : "fk_territories_region",
                   "pk_table" : "region_ba41360a",
                   "fk_table" : "territories_9205294e",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "region_id_9254017c",
-                        "foreign_key_column" : "region_id_b30e76b8"
+                        "primary_key_column_slug" : "region_id_9254017c",
+                        "foreign_key_column_slug" : "region_id_b30e76b8",
+                        "primary_key_column_name" : "region_id",
+                        "foreign_key_column_name" : "region_id"
                     }
                   ]
                 }
@@ -646,12 +673,15 @@
           "outbound_foreign_keys" : [
                 {
                   "fk_slug" : "fk_orders_shippers_74181537",
+                  "fk_name" : "fk_orders_shippers",
                   "pk_table" : "shippers_d333de48",
                   "fk_table" : "orders_b5d871fb",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "shipper_id_110b7771",
-                        "foreign_key_column" : "ship_via_e66920f0"
+                        "primary_key_column_slug" : "shipper_id_110b7771",
+                        "foreign_key_column_slug" : "ship_via_e66920f0",
+                        "primary_key_column_name" : "shipper_id",
+                        "foreign_key_column_name" : "ship_via"
                     }
                   ]
                 }
@@ -812,12 +842,15 @@
           "outbound_foreign_keys" : [
                 {
                   "fk_slug" : "fk_products_suppliers_85dc7f8c",
+                  "fk_name" : "fk_products_suppliers",
                   "pk_table" : "suppliers_f09c4f3d",
                   "fk_table" : "products_b624e07a",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "supplier_id_5c12cd1",
-                        "foreign_key_column" : "supplier_id_f14ac334"
+                        "primary_key_column_slug" : "supplier_id_5c12cd1",
+                        "foreign_key_column_slug" : "supplier_id_f14ac334",
+                        "primary_key_column_name" : "supplier_id",
+                        "foreign_key_column_name" : "supplier_id"
                     }
                   ]
                 }
@@ -923,8 +956,10 @@
                   "fk_table" : "customer_customer_demo_dfd7b619",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "customer_id_854a5f11",
-                        "foreign_key_column" : "customer_id_b17f8a23"
+                        "primary_key_column_slug" : "customer_id_854a5f11",
+                        "foreign_key_column_slug" : "customer_id_b17f8a23",
+                        "primary_key_column_name" : "customer_id",
+                        "foreign_key_column_name" : "customer_id"
                     }
                   ]
                 },
@@ -934,8 +969,10 @@
                   "fk_table" : "customer_customer_demo_dfd7b619",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "customer_type_id_4da6ea3a",
-                        "foreign_key_column" : "customer_type_id_6e6055e6"
+                        "primary_key_column_slug" : "customer_type_id_4da6ea3a",
+                        "foreign_key_column_slug" : "customer_type_id_6e6055e6",
+                        "primary_key_column_name" : "customer_type_id",
+                        "foreign_key_column_name" : "customer_type_id"
                     }
                   ]
                 }
@@ -1118,12 +1155,15 @@
           "outbound_foreign_keys" : [
                 {
                   "fk_slug" : "fk_order_details_orders_2b72b746",
+                  "fk_name" : "fk_order_details_orders",
                   "pk_table" : "orders_b5d871fb",
                   "fk_table" : "order_details_44160167",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "order_id_4ec7cd11",
-                        "foreign_key_column" : "order_id_883c2b25"
+                        "primary_key_column_slug" : "order_id_4ec7cd11",
+                        "foreign_key_column_slug" : "order_id_883c2b25",
+                        "primary_key_column_name" : "order_id",
+                        "foreign_key_column_name" : "order_id"
                     }
                   ]
                 }
@@ -1135,8 +1175,10 @@
                   "fk_table" : "orders_b5d871fb",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "customer_id_854a5f11",
-                        "foreign_key_column" : "customer_id_9b964a81"
+                        "primary_key_column_slug" : "customer_id_854a5f11",
+                        "foreign_key_column_slug" : "customer_id_9b964a81",
+                        "primary_key_column_name" : "customer_id",
+                        "foreign_key_column_name" : "customer_id"
                     }
                   ]
                 },
@@ -1146,8 +1188,10 @@
                   "fk_table" : "orders_b5d871fb",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "employee_id_8da8b911",
-                        "foreign_key_column" : "employee_id_3bb1b1b1"
+                        "primary_key_column_slug" : "employee_id_8da8b911",
+                        "foreign_key_column_slug" : "employee_id_3bb1b1b1",
+                        "primary_key_column_name" : "employee_id",
+                        "foreign_key_column_name" : "employee_id"
                     }
                   ]
                 },
@@ -1157,8 +1201,10 @@
                   "fk_table" : "orders_b5d871fb",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "shipper_id_110b7771",
-                        "foreign_key_column" : "ship_via_e66920f0"
+                        "primary_key_column_slug" : "shipper_id_110b7771",
+                        "foreign_key_column_slug" : "ship_via_e66920f0",
+                        "primary_key_column_name" : "shipper_id",
+                        "foreign_key_column_name" : "ship_via"
                     }
                   ]
                 }
@@ -1293,12 +1339,15 @@
           "outbound_foreign_keys" : [
                 {
                   "fk_slug" : "fk_order_details_products_96188bc5",
+                  "fk_name" : "fk_order_details_products",
                   "pk_table" : "products_b624e07a",
                   "fk_table" : "order_details_44160167",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "product_id_76f3f931",
-                        "foreign_key_column" : "product_id_a726f5e4"
+                        "primary_key_column_slug" : "product_id_76f3f931",
+                        "foreign_key_column_slug" : "product_id_a726f5e4",
+                        "primary_key_column_name" : "product_id",
+                        "foreign_key_column_name" : "product_id"
                     }
                   ]
                 }
@@ -1310,8 +1359,10 @@
                   "fk_table" : "products_b624e07a",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "category_id_472fd0a",
-                        "foreign_key_column" : "category_id_6a1fdac2"
+                        "primary_key_column_slug" : "category_id_472fd0a",
+                        "foreign_key_column_slug" : "category_id_6a1fdac2",
+                        "primary_key_column_name" : "category_id",
+                        "foreign_key_column_name" : "category_id"
                     }
                   ]
                 },
@@ -1321,8 +1372,10 @@
                   "fk_table" : "products_b624e07a",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "supplier_id_5c12cd1",
-                        "foreign_key_column" : "supplier_id_f14ac334"
+                        "primary_key_column_slug" : "supplier_id_5c12cd1",
+                        "foreign_key_column_slug" : "supplier_id_f14ac334",
+                        "primary_key_column_name" : "supplier_id",
+                        "foreign_key_column_name" : "supplier_id"
                     }
                   ]
                 }
@@ -1373,12 +1426,15 @@
           "outbound_foreign_keys" : [
                 {
                   "fk_slug" : "fk_employee_territories_territories_3b03b2bd",
+                  "fk_name" : "fk_employee_territories_territories",
                   "pk_table" : "territories_9205294e",
                   "fk_table" : "employee_territories_e5f9d93d",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "territory_id_101e5bd2",
-                        "foreign_key_column" : "territory_id_3abfa9c3"
+                        "primary_key_column_slug" : "territory_id_101e5bd2",
+                        "foreign_key_column_slug" : "territory_id_3abfa9c3",
+                        "primary_key_column_name" : "territory_id",
+                        "foreign_key_column_name" : "territory_id"
                     }
                   ]
                 }
@@ -1390,8 +1446,10 @@
                   "fk_table" : "territories_9205294e",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "region_id_9254017c",
-                        "foreign_key_column" : "region_id_b30e76b8"
+                        "primary_key_column_slug" : "region_id_9254017c",
+                        "foreign_key_column_slug" : "region_id_b30e76b8",
+                        "primary_key_column_name" : "region_id",
+                        "foreign_key_column_name" : "region_id"
                     }
                   ]
                 }
@@ -1436,8 +1494,10 @@
                   "fk_table" : "employee_territories_e5f9d93d",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "employee_id_8da8b911",
-                        "foreign_key_column" : "employee_id_fbd32af"
+                        "primary_key_column_slug" : "employee_id_8da8b911",
+                        "foreign_key_column_slug" : "employee_id_fbd32af",
+                        "primary_key_column_name" : "employee_id",
+                        "foreign_key_column_name" : "employee_id"
                     }
                   ]
                 },
@@ -1447,8 +1507,10 @@
                   "fk_table" : "employee_territories_e5f9d93d",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "territory_id_101e5bd2",
-                        "foreign_key_column" : "territory_id_3abfa9c3"
+                        "primary_key_column_slug" : "territory_id_101e5bd2",
+                        "foreign_key_column_slug" : "territory_id_3abfa9c3",
+                        "primary_key_column_name" : "territory_id",
+                        "foreign_key_column_name" : "territory_id"
                     }
                   ]
                 }
@@ -1529,8 +1591,10 @@
                   "fk_table" : "order_details_44160167",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "order_id_4ec7cd11",
-                        "foreign_key_column" : "order_id_883c2b25"
+                        "primary_key_column_slug" : "order_id_4ec7cd11",
+                        "foreign_key_column_slug" : "order_id_883c2b25",
+                        "primary_key_column_name" : "order_id",
+                        "foreign_key_column_name" : "order_id"
                     }
                   ]
                 },
@@ -1540,8 +1604,10 @@
                   "fk_table" : "order_details_44160167",
                   "column_refs" : [
                     {
-                        "primary_key_column" : "product_id_76f3f931",
-                        "foreign_key_column" : "product_id_a726f5e4"
+                        "primary_key_column_slug" : "product_id_76f3f931",
+                        "foreign_key_column_slug" : "product_id_a726f5e4",
+                        "primary_key_column_name" : "product_id",
+                        "foreign_key_column_name" : "product_id"
                     }
                   ]
                 }
