@@ -1,4 +1,5 @@
 {
+  "catalog_name": "$catalog.getName()",
   "schemas": [
   #foreach($schema in $catalog.schemas)
   {

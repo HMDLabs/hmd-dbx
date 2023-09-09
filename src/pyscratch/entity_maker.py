@@ -1,10 +1,13 @@
 import json
+import sys
 
-f = open('../../test/inter.json')
+db_name = sys.argv[1]
+
+f = open(f'../../test/{db_name}.json')
 raw_schema = json.load(f)
 f.close()
 
-f = open('northwind_graph_config.json')
+f = open(f'{db_name}_graph_config.json')
 graph_config = json.load(f)
 f.close()
 
@@ -82,7 +85,7 @@ class Column(NamedObject):
                 "required": self.content["is_nullable"] }
 
 
-schemas_to_namespace = {"public": "lang_northwind"}
+#schemas_to_namespace = {"public": "lang_northwind"}
 
 # note we're only reading the public schema now - this will need updated with a more robust inter format
 
@@ -108,10 +111,10 @@ for k, v in tables.items():
         v.mark_fk_for_ignore(imported_key0["column_refs"][0]["foreign_key_column_slug"])
         v.mark_fk_for_ignore(imported_key1["column_refs"][0]["foreign_key_column_slug"])
         dict_to_write = v.get_ns_dict(ns_type="relationship")
-        dict_to_write["ref_from"] = f'lang_northwind.{tables[(imported_key0["pk_table"])].name}'
-        dict_to_write["ref_to"] = f'lang_northwind.{tables[(imported_key1["pk_table"])].name}'
+        dict_to_write["ref_from"] = f'lang_{db_name}.{tables[(imported_key0["pk_table"])].name}'
+        dict_to_write["ref_to"] = f'lang_{db_name}.{tables[(imported_key1["pk_table"])].name}'
 
-        with open(f'../schemas/lang_northwind/{v.name}.hms', 'w') as f:
+        with open(f'../schemas/lang_{db_name}/{v.name}.hms', 'w') as f:
             json.dump(dict_to_write, f)
     else:
         # for a given table, we want to output:
@@ -129,12 +132,12 @@ for k, v in tables.items():
                                     "namespace": "lang_northwind",
                                     "metatype": "relationship",
                                     "attributes": dict(),
-                                    "ref_from": f'lang_northwind.{v.name}',
-                                    "ref_to": f'lang_northwind.{fk_table.name}'
+                                    "ref_from": f'lang_{db_name}.{v.name}',
+                                    "ref_to": f'lang_{db_name}.{fk_table.name}'
                                     }
                 # save the new relationship
                 ns_relationships[new_rel_name] = new_relationship
-                with open(f'../schemas/lang_northwind/{new_rel_name}.hms', 'w') as f:
+                with open(f'../schemas/lang_{db_name}/{new_rel_name}.hms', 'w') as f:
                     json.dump(new_relationship, f)
 
                 #remove the column refs from the target tables
@@ -150,7 +153,7 @@ for k, v in tables.items():
     #ignore the overriden
     if v.name not in graph_config["m2m_to_relationship"]:
         dict_to_write = v.get_ns_dict()
-        with open(f'../schemas/lang_northwind/{v.name}.hms', 'w') as f:
+        with open(f'../schemas/lang_{db_name}/{v.name}.hms', 'w') as f:
             json.dump(dict_to_write, f)
 
 print(f'New Relationships: {len(ns_relationships)}')
